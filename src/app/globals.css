@@ -1,26 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sf-pro: "SF Pro Display", sans-serif;
+  --font-shrikhand: "Shrikhand", cursive;
+  --color-tuatara: #363636;
+  --color-lightGray: #d3d3d3;
+  --color-wildSand: #f4f4f4;
+  --color-guardsman: #bf0405;
+  --color-casualBlack: #191919;
+  --color-darkGray: #3c3c3c;
+  --color-deepRed: #c40504;
+  --color-shinyGray: #c7c6c6;
+  --color-babyGrey: #9f9f9f;
+  --color-eerieBlack: #2b2b2b;
+  --color-subtleWhite: #eeeeee;
+  --color-darkCharcoal: #2321248f;
+
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1894px;
+
+  --shadow-innerHighlight:
+    inset 0px 4px 16px rgba(246, 247, 255, 0.62),
+    inset 0px 4px 8px rgba(246, 247, 255, 0.22);
+
+  --shadow-deepSoft:
+    0px 174px 69px rgba(230, 230, 230, 0.03),
+    0px 98px 59px rgba(230, 230, 230, 0.1),
+    0px 43px 43px rgba(230, 230, 230, 0.17),
+    0px 11px 24px rgba(230, 230, 230, 0.2);
+
+  --shadow-innershine:
+    inset 0px 4px 8px rgba(246, 247, 255, 0.22),
+    inset 0px 4px 8px rgba(246, 247, 255, 0.22);
+
+  --shadow-innershineLight:
+    inset 0px 4px 8px rgba(54, 54, 54, 0.08),
+    inset 0px 2px 4px rgba(54, 54, 54, 0.04);
+
+  --shadow-innerHighlightLight:
+    0px 174px 69px rgba(230, 230, 230, 0.03),
+    0px 98px 59px rgba(230, 230, 230, 0.1),
+    0px 43px 43px rgba(230, 230, 230, 0.17),
+    0px 11px 24px rgba(230, 230, 230, 0.2);
+}
+@custom-variant dark (&:where(.dark, .dark *));
+
+button {
+  @apply cursor-pointer;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.common-container {
+  @apply max-w-[1892px] w-full mx-auto 2xl:px-6.75 px-3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.menu-buttons {
+  @apply rounded-full 3xl:size-16 size-12 3xl:p-4 p-3.5 flex items-center justify-center  overflow-hidden;
+}
+
+.gradient-border {
+  position: relative;
+  z-index: 0;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px; /* border width */
+  border-radius: inherit;
+  background: linear-gradient(
+    180.13deg,
+    #ffffff 0.11%,
+    rgba(102, 102, 102, 0) 50%
+  );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+  z-index: -1;
+}
+.lap-bg {
+  background: linear-gradient(
+    179.69deg,
+    rgba(196, 5, 4, 0.156) 34.61%,
+    rgba(0, 0, 0, 0) 96.71%
+  );
+}
+.document-visual {
+  position: relative;
+  isolation: isolate;
+}
+
+/* =========================
+   SHAPE 1
+========================= */
+
+.document-visual::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 265%;
+  aspect-ratio: 3/3;
+  transform: translate(-50%, -50%) scale(0.65);
+  background: #21212103;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: inset 0px 48px 47.6344px rgba(255, 255, 255, 0.12);
+  z-index: -3;
+  pointer-events: none;
+  animation: document-bg-reveal 0.32s 0ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  will-change: transform, opacity;
+}
+
+/* =========================
+   SHAPE 2
+========================= */
+
+.document-visual::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 180%;
+  aspect-ratio: 3/3;
+  transform: translate(-50%, -50%) scale(0.65);
+  background: #21212103;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: inset 0px 26.4635px 47.6344px rgba(255, 255, 255, 0.06);
+  z-index: -2;
+  pointer-events: none;
+  animation: document-bg-reveal 0.32s 80ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  will-change: transform, opacity;
+}
+/* =========================
+   SHAPE 3
+========================= */
+
+.document-visual-layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) scale(0.65);
+  background: #21212103;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: inset 0px 26.4635px 47.6344px rgba(255, 255, 255, 0.06);
+  z-index: -1;
+  pointer-events: none;
+  animation: document-bg-reveal 0.32s 160ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+
+  will-change: transform, opacity;
+}
+.document-visual-layer-2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) scale(0.65);
+  background: #21212103;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: inset 0px 20px 35px rgba(255, 255, 255, 0.05);
+  z-index: 0;
+  pointer-events: none;
+  animation: document-bg-reveal 0.32s 240ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+  will-change: transform, opacity;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes document-bg-reveal {
+  0% {
+    opacity: 0;
+
+    transform: translate(-50%, -50%) scale(0.65);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform: translate(-50%, -50%) scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translate(-50%, -50%) scale(1);
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark .footer-bg {
+  background: linear-gradient(
+    179.69deg,
+    rgba(196, 5, 4, 0.156) 34.61%,
+    rgba(0, 0, 0, 0) 96.71%
+  );
+}
+.footer-bg {
+  background: linear-gradient(
+    179.69deg,
+    rgba(196, 5, 4, 0.1) 34.61%,
+    rgba(255, 255, 255, 0) 96.71%
+  );
+}
+.moving-car-border {
+  position: relative;
+  z-index: 0;
+  background: linear-gradient(180deg, #d7d7d7 -80%, #222222 100%) border-box;
 }
