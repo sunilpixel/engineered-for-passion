@@ -19,7 +19,7 @@ const Drawer = ({ isOpen, onClose, activeId, onSelect }: DrawerProps) => {
 
       {/* Drawer */}
       <aside
-        className={`fixed right-0 top-0 z-[999] h-dvh w-full max-w-105 bg-eerieBlack transition-transform duration-300 md:hidden ${
+        className={`fixed right-0 top-0 z-999 h-dvh w-full max-w-105 bg-eerieBlack transition-transform duration-300 md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

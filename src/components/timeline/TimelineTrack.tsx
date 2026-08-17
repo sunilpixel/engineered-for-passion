@@ -120,7 +120,7 @@ export default function TimelineTrack({ step }: Props) {
           </div>
 
           {/* Car */}
-          <div className="absolute left-1/2 top-0 size-11.5 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-[#322728] p-1 shadow-innerHighlightLight">
+          <div className="absolute left-1/2 top-0 size-11.5 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-darkTaupe p-1 shadow-innerHighlightLight">
             <div className="moving-car-border rounded-full p-1">
               <Image
                 src="/images/png/red-car.png"

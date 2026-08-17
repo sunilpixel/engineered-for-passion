@@ -10,7 +10,7 @@ const ProgressTip = ({ step }: ProgressTipProps) => {
         {STEPS[step].title}
       </p>
 
-      <p className="relative z-30 mt-1 font-sf-pro text-sm font-medium text-eerieBlack dark:text-[#CECECE] lg:text-[17px]">
+      <p className="relative z-30 mt-1 font-sf-pro text-sm font-medium text-eerieBlack dark:text-vibrant lg:text-[17px]">
         {STEPS[step].sub}
       </p>
     </div>

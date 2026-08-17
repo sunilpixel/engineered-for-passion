@@ -21,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
       </head>
-      <body className="dark:bg-black bg-[#F2F2F0]  font-sf-pro main-bg relative">
+      <body className="dark:bg-black bg-seashell  font-sf-pro main-bg relative">
         {children}
       </body>
     </html>

@@ -4,7 +4,7 @@ import { LAPS, LINE } from "./Helper";
 
 export default function Footer({ step = 3 }: { step?: number }) {
   return (
-    <div className="relative h-52 w-full overflow-hidden md:h-64 xl:h-[347px]">
+    <div className="relative h-52 w-full overflow-hidden md:h-64 xl:h-86.75">
       <svg
         viewBox="0 0 1894 347"
         preserveAspectRatio="none"
