@@ -61,6 +61,9 @@
     0px 43px 43px rgba(230, 230, 230, 0.17),
     0px 11px 24px rgba(230, 230, 230, 0.2);
 
+  --shadow-lightSoft:
+    0px 6px 0px var(--tw-shadow-color, #e6e6e608), 0px 98px 59px var(--tw-shadow-color, #e6e6e61a), 0px 0px 47px var(--tw-shadow-color, #e6e6e62b), 0px 11px 24px var(--tw-shadow-color, #e6e6e633);
+
   --shadow-innershine:
     inset 0px 4px 8px rgba(246, 247, 255, 0.22),
     inset 0px 4px 8px rgba(246, 247, 255, 0.22);
@@ -126,7 +129,7 @@ button {
 }
 
 .document-layers::before {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[270%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[130%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   content: "";
   z-index: -3;
   pointer-events: none;
@@ -139,14 +142,14 @@ button {
 ========================= */
 
 .document-layers::after {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[200%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-full  bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   content: "";
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 80ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
 }
 .document-inside-layers {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[135%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[65%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 240ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
@@ -243,4 +246,8 @@ button {
 .moving-car-border {
   @apply relative z-0;
   background: linear-gradient(180deg, #d7d7d7 -80%, #222222 100%) border-box;
+}
+.cc{
+  
+    box-shadow: inset 0px 26.4635px 47.6344px rgba(255, 255, 255, 0.06);
 }

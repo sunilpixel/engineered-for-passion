@@ -471,7 +471,7 @@ export const LightUpIcon = ({ className = "" }) => (
   <svg
     width="100%"
     height="100%"
-    viewBox="0 0 389 714"
+    viewBox="0 0 389 "
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={`text-eerieBlack/20 dark:text-[#C7C6C6]/70 ${className}`}
@@ -485,8 +485,8 @@ export const LightUpIcon = ({ className = "" }) => (
         id="filter0_f_2722_183"
         x="0"
         y="-174"
-        width="389"
-        height="888"
+         width="100%"
+    height="100%"
         filterUnits="userSpaceOnUse"
         colorInterpolationFilters="sRGB"
       >

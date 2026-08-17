@@ -28,3 +28,19 @@ type timelineProps = {
 type ProgressTipProps = {
   step: number;
 };
+type StatCardProps = {
+  item: {
+    value: string;
+    label: string;
+  };
+  index: number;
+  side: "left" | "right";
+};
+type StatCardProps = {
+  item: {
+    value: string;
+    label: string;
+  };
+  index: number;
+  side: "left" | "right";
+};

@@ -14,7 +14,7 @@ const ExperienceLayout = () => {
     <div className=" flex flex-col overflow-hidden">
       <Header />
       <HeroContent />
-      <div className="flex justify-between items-center gap-4 3xl:max-w-[1752px] max-w-[1440px] px-3 w-full mx-auto grow mt-20 ">
+      <div className="flex justify-between items-center gap-4 3xl:max-w-[1752px] max-w-[1440px] px-3 w-full mx-auto grow lg:mt-20 mt-10">
         <LeftActions activeId={activeId} onSelect={setActiveId} />
         <CenterContent activeId={activeId} />
         <RightActions activeId={activeId} onSelect={setActiveId} />

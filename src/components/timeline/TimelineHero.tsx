@@ -2,7 +2,6 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
-import { LightUpIcon } from "../common/Icons";
 
 export default function TimelineHero({ phase }: timelineHeroProps) {
   return (
@@ -12,9 +11,7 @@ export default function TimelineHero({ phase }: timelineHeroProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="relative grid place-items-center">
-        <LightUpIcon className="absolute top-[-10%] left-1/2 h-[80%] w-full max-w-95.5 -translate-x-1/2" />
-
+       
         <motion.div
           className="relative w-full max-w-72 3xl:max-w-85.5"
           animate={
@@ -30,9 +27,16 @@ export default function TimelineHero({ phase }: timelineHeroProps) {
             duration: 0.8,
             ease: [0.7, 0, 0.84, 0],
           }}
-        >
+        >       <Image
+                      className="absolute bottom-[5%] left-1/2 z-0 h-[312%] w-[130%] -translate-x-1/2 object-fill"
+                      src="/images/png/light-up.png"
+                      alt="black car"
+                      width={189}
+                      height={342}
+                      priority
+                    />
           <Image
-            className="aspect-square w-full rounded-full object-cover shadow-deepSoft"
+        className="relative z-10 aspect-square w-full xl:max-w-72 max-w-52 rounded-full object-cover shadow-lightSoft "
             src="/images/png/red-car.png"
             alt="Your car"
             width={342}
@@ -40,7 +44,6 @@ export default function TimelineHero({ phase }: timelineHeroProps) {
             priority
           />
         </motion.div>
-      </div>
     </motion.div>
   );
 }
