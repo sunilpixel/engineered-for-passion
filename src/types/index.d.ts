@@ -25,3 +25,6 @@ type timelineHeroProps = {
 type timelineProps = {
   onHome: () => void;
 };
+type ProgressTipProps = {
+  step: number;
+};

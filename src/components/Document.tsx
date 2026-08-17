@@ -8,9 +8,11 @@ const Document = () => {
   const rightStats = carStats.filter((item) => item.side === "right");
 
   return (
-    <>
+    <div className="document-layers relative isolate">
+      {" "}
+      <span className="document-inside-layers" />
       <LightUpIcon className="absolute top-[-10%] left-1/2 z-0 h-auto w-full max-w-95.5 -translate-x-1/2" />
-      <div className=" relative mx-auto">
+      <div className=" relative mx-auto ">
         <div className="relative z-10 flex">
           {/* LEFT STATS */}
           <div className="flex flex-col justify-between gap-4 xl:pr-8 sm:pr-6 pr-2 text-right">
@@ -61,7 +63,7 @@ const Document = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

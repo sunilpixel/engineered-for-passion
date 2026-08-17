@@ -31,14 +31,14 @@ export default function Timeline() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="relative max-w-246.75 w-full mx-auto  h-full document-visual ">
+      <div className="relative max-w-246.75 w-full mx-auto  h-full timeline-layers isolate">
         <AnimatePresence>
           {(phase === "hero" || phase === "warp") && (
             <TimelineHero key="hero" phase={phase} />
           )}
         </AnimatePresence>
-        <span className="document-visual-layer" />
-        <span className="document-visual-layer-2" />
+        <span className="timeline-inside-layers" />
+        <span className="timeline-inside-layers-2" />
         <AnimatePresence>
           {phase === "track" && <TimelineTrack step={step} />}
         </AnimatePresence>

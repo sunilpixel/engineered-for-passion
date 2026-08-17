@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EASE, RED, STEPS } from "../common/Helper";
-import { ClipPathbgIcon } from "../common/Icons";
+import ProgressTip from "../common/ProgressTip";
 
 const EDGE_PADDING = 16;
 
@@ -21,15 +21,10 @@ export default function TimelineTrack({ step }: Props) {
 
     const trackRect = track.getBoundingClientRect();
 
-    // offsetWidth = layout width. getBoundingClientRect ki tarah
-    // current transform ise affect nahi karta.
     const width = tooltip.offsetWidth;
 
-    // innerWidth me scrollbar bhi count hoti hai (~15px) — isliye clientWidth
     const viewport = document.documentElement.clientWidth;
 
-    // Anchor DOM se mat padho: wo spring me animate ho raha hota hai aur
-    // mid-flight galat value deta hai. Target position maths se nikaalo.
     const progress = STEPS.length > 1 ? step / (STEPS.length - 1) : 0;
     const anchor = trackRect.left + trackRect.width * progress;
 
@@ -47,9 +42,6 @@ export default function TimelineTrack({ step }: Props) {
     setTooltipX(shift);
   }, [step]);
 
-  // AnimatePresence mode="wait" ki wajah se useEffect ke time par abhi bhi
-  // PURANA tooltip mounted hota hai. Callback ref naya node mount hote hi
-  // chalta hai, isliye measurement hamesha current step ka hota hai.
   const setTooltipNode = useCallback(
     (node: HTMLDivElement | null) => {
       tooltipRef.current = node;
@@ -76,7 +68,7 @@ export default function TimelineTrack({ step }: Props) {
     >
       <div
         ref={trackRef}
-        className="relative mx-auto w-full max-w-[91%] md:max-w-[60%] lg:max-w-[70%] 2xl:max-w-full  document-visual"
+        className="relative mx-auto w-full max-w-[91%] md:max-w-[60%] lg:max-w-[70%] 2xl:max-w-full  "
       >
         {/* Timeline */}
         <motion.div
@@ -109,14 +101,11 @@ export default function TimelineTrack({ step }: Props) {
           animate={{ left: `${(step / (STEPS.length - 1)) * 100}%` }}
           transition={{ type: "spring", stiffness: 90, damping: 18 }}
         >
-          {/* Clamp wrapper — sirf edge-collision offset, koi animation nahi.
-              Isse motion ka `x` aur clamp ka transform aapas me nahi ladte. */}
           <div
             className="absolute bottom-6.25 left-0"
             style={{ transform: `translateX(calc(-50% + ${tooltipX}px))` }}
           >
             <AnimatePresence mode="wait">
-              {/* TOOLTIP */}
               <motion.div
                 ref={setTooltipNode}
                 key={step}
@@ -126,17 +115,7 @@ export default function TimelineTrack({ step }: Props) {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.35, ease: EASE }}
               >
-                <div className="relative min-w-65.25 px-6 py-6 xl:py-10">
-                  <ClipPathbgIcon className="absolute inset-0 z-0 h-full w-full" />
-
-                  <p className="relative z-30 font-sf-pro text-sm font-black text-eerieBlack dark:text-white lg:text-base">
-                    {STEPS[step].title}
-                  </p>
-
-                  <p className="relative z-30 mt-1 font-sf-pro text-sm font-medium text-eerieBlack dark:text-[#CECECE] lg:text-[17px]">
-                    {STEPS[step].sub}
-                  </p>
-                </div>
+                <ProgressTip step={step} />
               </motion.div>
             </AnimatePresence>
           </div>

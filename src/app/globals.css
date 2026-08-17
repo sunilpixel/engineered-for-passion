@@ -40,6 +40,7 @@
   --color-babyGrey: #9f9f9f;
   --color-eerieBlack: #2b2b2b;
   --color-subtleWhite: #eeeeee;
+  --color-darkOverlay: #21212103;
   --color-darkCharcoal: #2321248f;
 
   --breakpoint-xs: 375px;
@@ -73,6 +74,8 @@
     0px 98px 59px rgba(230, 230, 230, 0.1),
     0px 43px 43px rgba(230, 230, 230, 0.17),
     0px 11px 24px rgba(230, 230, 230, 0.2);
+
+  --shadow-layers: inset 0px 20px 35px rgba(255, 255, 255, 0.05);
 }
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -89,8 +92,7 @@ button {
 }
 
 .gradient-border {
-  position: relative;
-  z-index: 0;
+  @apply relative z-0;
 }
 
 .gradient-border::before {
@@ -122,21 +124,44 @@ button {
     rgba(0, 0, 0, 0) 96.71%
   );
 }
-.document-visual {
-  position: relative;
-  isolation: isolate;
+
+.document-layers::before {
+  @apply absolute left-1/2 top-1/2 aspect-square w-[270%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  content: "";
+  z-index: -3;
+  pointer-events: none;
+  animation: document-bg-reveal 0.32s 0ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+}
+
+/* =========================
+   SHAPE 2
+========================= */
+
+.document-layers::after {
+  @apply absolute left-1/2 top-1/2 aspect-square w-[200%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  content: "";
+  transform: translate(-50%, -50%) scale(0.65);
+  animation: document-bg-reveal 0.32s 80ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
+}
+.document-inside-layers {
+  @apply absolute left-1/2 top-1/2 aspect-square w-[135%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  transform: translate(-50%, -50%) scale(0.65);
+  animation: document-bg-reveal 0.32s 240ms cubic-bezier(0.34, 1.56, 0.64, 1)
+    forwards;
 }
 
 /* =========================
    SHAPE 1
 ========================= */
 
-.document-visual::before {
+.timeline-layers::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 265%;
+  width: 180%;
   aspect-ratio: 3/3;
   transform: translate(-50%, -50%) scale(0.65);
   background: #21212103;
@@ -154,62 +179,28 @@ button {
    SHAPE 2
 ========================= */
 
-.document-visual::after {
+.timeline-layers::after {
+  @apply absolute left-1/2 top-1/2 aspect-square w-[135%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 180%;
-  aspect-ratio: 3/3;
   transform: translate(-50%, -50%) scale(0.65);
-  background: #21212103;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: inset 0px 26.4635px 47.6344px rgba(255, 255, 255, 0.06);
-  z-index: -2;
-  pointer-events: none;
   animation: document-bg-reveal 0.32s 80ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
-  will-change: transform, opacity;
 }
 /* =========================
    SHAPE 3
 ========================= */
 
-.document-visual-layer {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 120%;
-  aspect-ratio: 1;
+.timeline-inside-layers {
+  @apply absolute left-1/2 top-1/2 aspect-square w-[90%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   transform: translate(-50%, -50%) scale(0.65);
-  background: #21212103;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: inset 0px 26.4635px 47.6344px rgba(255, 255, 255, 0.06);
-  z-index: -1;
-  pointer-events: none;
   animation: document-bg-reveal 0.32s 160ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
-
-  will-change: transform, opacity;
 }
-.document-visual-layer-2 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 50%;
-  aspect-ratio: 1;
+.timeline-inside-layers-2 {
+  @apply absolute left-1/2 top-1/2 aspect-square w-[45%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   transform: translate(-50%, -50%) scale(0.65);
-  background: #21212103;
-  border-radius: 50%;
-  opacity: 0;
-  box-shadow: inset 0px 20px 35px rgba(255, 255, 255, 0.05);
-  z-index: 0;
-  pointer-events: none;
   animation: document-bg-reveal 0.32s 240ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
-  will-change: transform, opacity;
 }
 
 /* =========================
@@ -250,7 +241,6 @@ button {
   );
 }
 .moving-car-border {
-  position: relative;
-  z-index: 0;
+  @apply relative z-0;
   background: linear-gradient(180deg, #d7d7d7 -80%, #222222 100%) border-box;
 }
