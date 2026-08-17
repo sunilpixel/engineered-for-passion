@@ -45,7 +45,7 @@ const Header = () => {
           className={`relative z-10 transition-colors ${
             dark
               ? "dark:stroke-lightGray "
-              : "dark:stroke-lightGray/50 stroke-white"
+              : "dark:stroke-lightGray/50 stroke-lightGray/60"
           }`}
         />
       </button>
