@@ -14,14 +14,7 @@ export default function Timeline() {
 
   const [, phase, step] = cue;
 
-  // const FREEZE: number | null = 0;
-
   useEffect(() => {
-    // if (FREEZE !== null) {
-    //   setCue(CUES[FREEZE]);
-    //   return;
-    // }
-
     setCue(CUES[0]);
 
     const timers = CUES.map((c) => setTimeout(() => setCue(c), c[0]));
