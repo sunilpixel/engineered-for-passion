@@ -1,15 +1,23 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "./Icons";
 
 const Header = () => {
   const [dark, setDark] = useState(false);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("theme") === "dark";
+    setDark(saved);
+    document.documentElement.classList.toggle("dark", saved);
+  }, []);
+
   const toggleTheme = () => {
-    setDark(!dark);
-    document.documentElement.classList.toggle("dark");
+    const value = !dark;
+    setDark(value);
+    document.documentElement.classList.toggle("dark", value);
+    localStorage.setItem("theme", value ? "dark" : "light");
   };
   return (
     <nav className="common-container flex items-center justify-between gap-4 3xl:py-4.5 py-2 relative z-10  mb-5 border-b dark:border-transparent border-lightGray/50">

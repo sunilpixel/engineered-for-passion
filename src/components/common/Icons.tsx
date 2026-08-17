@@ -553,9 +553,9 @@ export const TipbgIcon = ({ className = "" }) => (
         y2="21"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#333333" />
-        <stop offset="0.598884" stop-color="#C40504" />
-        <stop offset="1" stop-color="#BF0405" />
+        <stop stopColor="#333333" />
+        <stop offset="0.598884" stopColor="#C40504" />
+        <stop offset="1" stopColor="#BF0405" />
       </linearGradient>
     </defs>
   </svg>

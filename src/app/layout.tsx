@@ -8,7 +8,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" suppressHydrationWarning className="h-full antialiased">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.documentElement.classList.toggle(
+                "dark",
+                localStorage.getItem("theme") === "dark"
+              );
+            `,
+          }}
+        />
+      </head>
       <body className="dark:bg-black bg-[#F2F2F0]  font-sf-pro main-bg relative">
         {children}
       </body>
