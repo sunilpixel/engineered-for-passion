@@ -44,7 +44,7 @@ const HeroContent = () => {
       <h1 className="font-shrikhand italic uppercase 3xl:text-6xl xl:text-5xl text-4xl tracking-[1%] dark:text-wildSand text-eerieBlack text-center dark:text-shadow-none text-shadow-luxury ">
         Engineered for <span className="text-guardsman">passion</span>
       </h1>
-      <div className="font-semibold 3xl:text-lg w-fit mx-auto flex 2xl:text-base text-sm tracking-[1%] leading-9.75 dark:text-white text-black opacity-68 font-sf-pro text-center relative  ">
+      <div className="font-semibold 3xl:text-lg w-fit mx-auto flex 2xl:text-base text-sm tracking-[1%] leading-9.75 dark:text-white text-black opacity-68 font-sf-pro text-center relative dark:text-shadow-none text-shadow-luxury ">
         Precision.{" "}
         <p>
           Power{" "}

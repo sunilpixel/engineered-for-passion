@@ -49,13 +49,13 @@ export default function Footer({ step = 3 }: { step?: number }) {
               )}
               <span
                 className={`size-full rounded-full transition-colors ${
-                  active ? "bg-deepRed" : "bg-babyGrey"
+                  active ? "bg-deepRed" : "dark:bg-babyGrey bg-eerieBlack"
                 }`}
               />
             </span>
 
             {/* dashed connector */}
-            <span className="w-px flex-1 border-white/50 border  border-dashed" />
+            <span className="w-px flex-1 dark:border-white/50 bg-eerieBlack/20 border  border-dashed" />
 
             <p
               className={`mt-1.25 whitespace-nowrap sm:text-sm text-xs leading-none transition-colors lg:text-base ${
