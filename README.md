@@ -35,6 +35,10 @@ Overall, the combination of Next.js, Tailwind CSS, image optimization, code spli
 4. Open the Project
    Open the following URL in your browser => http://localhost:3000
 
+<!-- Live Link -->
+
+https://engineered-for-passion-neon.vercel.app/
+
 <!-- Assumptions / Decisions Made -->
 
 1. Used the provided Figma design as the primary reference for the UI implementation.
@@ -51,7 +55,7 @@ Theme Toggle
 Implemented a theme toggle button that allows users to switch between light and dark modes.
 
 The selected theme is saved in localStorage, so when the user visits the website again, their previously selected theme is automatically restored instead of resetting to the default theme.
-![Header.tsx](image-1.png)
+![Header.tsx](./docs/screenshots/image-1.png)
 
 <!-- Timeline Animation -->
 
@@ -64,17 +68,17 @@ Used useEffect and setTimeout to automatically progress through the timeline seq
 Added AnimatePresence to smoothly enter and exit timeline sections.
 Added reduced-motion support using MotionConfig for users who prefer reduced animations.
 
-![Timeline.tsx](image-2.png)
+![Timeline.tsx](./docs/screenshots/image-2.png)
 
 <!-- Dynamic Content Rendering -->
 
 Created different cases based on activeId to render the corresponding content for each section. Each case displays the required component or content dynamically.
-![CenterContent.tsx](image-3.png)
+![CenterContent.tsx](./docs/screenshots/image-3.png)
 
 <!-- Helper -->
 
 Used a helper function/component to keep the logic clean, reusable, and easy to maintain.
-![/Common/Helper.tsx](image-4.png)
+![/Common/Helper.tsx](i./docs/screenshots/image-4.png)
 
 <!-- Common Layout -->
 
@@ -84,25 +88,25 @@ Used React state to manage the active section and drawer open/close state.
 Used activeId to dynamically update the content and selected section.
 Used useEffect to control the document body overflow when the drawer is opened, preventing background scrolling.
 Passed state and event handlers to child components through props for communication between components.
-![ExperienceLayout.tsx](image-5.png)
+![ExperienceLayout.tsx](./docs/screenshots/image-5.png)
 
 <!-- Global Type Definitions -->
 
 Created a global types/index.d.ts file and included it in tsconfig.json so that shared TypeScript types, such as props types, can be used throughout the project without importing them into every component. This keeps the code cleaner and avoids repetitive type imports.
-tsconfig![index.d.ts](image-7.png)
-![tsconfig.json](image-6.png)
+tsconfig![index.d.ts](./docs/screenshots/image-7.png)
+![tsconfig.json](./docs/screenshots/image-6.png)
 
 <!-- Image Assets -->
 
 Organized the project images into separate folders based on image format and usage, keeping the assets structured and easy to manage.
-![images](image-8.png)
+![images](./docs/screenshots/image-8.png)
 
 <!-- Fonts & Tailwind CSS -->
 
 Added the required custom fonts using @font-face and configured different font weights for SF Pro Display. Also imported Shrikhand from Google Fonts.
 
 Imported Tailwind CSS in the global stylesheet to use utility classes throughout the project.
-![global.css](image-9.png)
+![global.css](./docs/screenshots/image-9.png)
 
 <!-- Custom Theme Configuration -->
 
@@ -117,15 +121,15 @@ Dark theme support
 Reusable design tokens
 
 This helps maintain consistent styling across the project and makes responsive design and theme customization easier.
-![global.css](image-10.png)
-![global.css](image-11.png)
+![global.css](./docs/screenshots/image-10.png)
+![global.css](./docs/screenshots/image-11.png)
 
 <!-- Custom Gradient Border -->
 
 Created a reusable .gradient-border utility using a pseudo-element and CSS gradient to achieve a custom gradient border effect with rounded corners while keeping the border styling flexible and reusable.
-![global.css](image-12.png)
+![global.css](./docs/screenshots/image-12.png)
 
 <!-- Document Background Reveal Animation -->
 
 Created a custom CSS keyframe animation for the document background reveal effect. The animation smoothly changes the element’s opacity and scale during the reveal, creating a polished entrance animation.
-![global.css](image-13.png)
+![global.css](./docs/screenshots/image-13.png)
