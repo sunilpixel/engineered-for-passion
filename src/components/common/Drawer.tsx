@@ -21,7 +21,7 @@ const Drawer = ({ isOpen, onClose, activeId, onSelect }: DrawerProps) => {
 
       {/* Drawer */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-dvh w-full max-w-105 bg-darkCharcoal transition-transform duration-300 md:hidden ${
+        className={`fixed right-0 top-0 z-[999] h-dvh w-full max-w-105 bg-eerieBlack transition-transform duration-300 md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -60,7 +60,7 @@ const Drawer = ({ isOpen, onClose, activeId, onSelect }: DrawerProps) => {
               >
                 <div className="max-w-8">{item.icon}</div>
 
-                <span>{item.label}</span>
+                <span>{item.tip}</span>
               </button>
             ))}
           </div>

@@ -11,17 +11,17 @@ export const leftMenuItems = [
   {
     id: 1,
     icon: <SpeedometerIcon />,
-    label: "Home",
+    tip: "Speed",
   },
   {
     id: 2,
     icon: <HomeIcon />,
-    label: "Pricing",
+    tip: "Click for Home",
   },
   {
     id: 3,
     icon: <RupeeIcon />,
-    label: "Performance",
+    tip: "Rupee",
   },
 ];
 
@@ -29,17 +29,17 @@ export const RightMenuItems = [
   {
     id: 4,
     icon: <ChatIcon />,
-    label: "CHat",
+    tip: "Chat",
   },
   {
     id: 5,
     icon: <DocumentIcon />,
-    label: "Document",
+    tip: "Document",
   },
   {
     id: 6,
     icon: <FileIcon />,
-    label: "File",
+    tip: "File",
   },
 ];
 export const RED = "#C40504";

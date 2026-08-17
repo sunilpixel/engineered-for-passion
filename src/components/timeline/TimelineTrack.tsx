@@ -67,7 +67,7 @@ export default function TimelineTrack({ step }: Props) {
     >
       <div
         ref={trackRef}
-        className="relative mx-auto w-full max-w-[91%] md:max-w-[60%] lg:max-w-[70%] 2xl:max-w-full  "
+        className="relative mx-auto w-full max-w-[91%] md:max-w-[60%] lg:max-w-[70%] 2xl:max-w-full"
       >
         {/* Timeline */}
         <motion.div

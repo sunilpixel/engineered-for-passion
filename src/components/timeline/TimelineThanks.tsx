@@ -11,14 +11,14 @@ export default function TimelineThanks({ onHome }: timelineProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: EASE }}
     >
-      <p className="3xl:text-6xl xl:text-5xl lg:text-4xl text-2xl font-shrikhand tracking-[1%] text-wildSand">
+      <p className="3xl:text-6xl xl:text-5xl lg:text-4xl text-2xl font-shrikhand tracking-[1%] dark:text-wildSand text-eerieBlack">
         THANK YOU
       </p>
 
       <button
         type="button"
         onClick={onHome}
-        className="bg-white/20 rounded-full px-4 w-full justify-center max-w-33.75 flex items-center lg:min-h-12 min-h-10 md:text-xl text-sf-pro text-white tracking-[1%] 3xl:mt-37.5 xl:mt-20 mt-10 xl:text-base text-sm"
+        className="dark:bg-white/20 bg-darkGray rounded-full px-4 w-full justify-center max-w-33.75 flex items-center lg:min-h-12 min-h-10 md:text-xl text-sf-pro dark:text-white text-wildSand tracking-[1%] 3xl:mt-37.5 xl:mt-20 mt-10 xl:text-base text-sm"
       >
         Home
       </button>

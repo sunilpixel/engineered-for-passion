@@ -467,46 +467,6 @@ export const ButtonBlur = ({ className = "" }) => (
     </defs>
   </svg>
 );
-export const LightUpIcon = ({ className = "" }) => (
-  <svg
-    width="100%"
-    height="100%"
-    viewBox="0 0 389 "
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={`text-eerieBlack/20 dark:text-[#C7C6C6]/70 ${className}`}
-  >
-    <g filter="url(#filter0_f_2722_183)">
-      <path d="M189.5 -74H212L289 614H100L189.5 -74Z" fill="currentColor" />
-    </g>
-
-    <defs>
-      <filter
-        id="filter0_f_2722_183"
-        x="0"
-        y="-174"
-         width="100%"
-    height="100%"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="BackgroundImageFix"
-          result="shape"
-        />
-
-        <feGaussianBlur
-          stdDeviation="50"
-          result="effect1_foregroundBlur_2722_183"
-        />
-      </filter>
-    </defs>
-  </svg>
-);
 export const CurveBorderIcon = ({ className = "" }) => (
   <svg
     width="100%"
@@ -561,6 +521,57 @@ export const ClipPathbgIcon = ({ className = "" }) => (
       stroke=""
       strokeOpacity="0.1"
       strokeWidth="5"
+    />
+  </svg>
+);
+export const TipbgIcon = ({ className = "" }) => (
+  <svg
+    width="100%"
+    height="100%"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className}`}
+  >
+    <mask id="path-1-inside-1_2722_187" fill="white">
+      <path d="M159.447 21C159.447 32.598 150.044 42 138.447 42H14.6617C10.6768 42 7.4465 38.7697 7.4465 34.7848C7.4465 32.2071 6.03672 29.8052 3.80432 28.5163C-1.19566 25.6296 -1.30346 18.3506 3.69652 15.4639C6.01701 14.1241 7.4465 11.6482 7.4465 8.96873V8.4311C7.4465 3.77473 11.2212 0 15.8776 0H138.447C150.044 0 159.447 9.40202 159.447 21Z" />
+    </mask>
+    <path
+      d="M159.447 21C159.447 32.598 150.044 42 138.447 42H14.6617C10.6768 42 7.4465 38.7697 7.4465 34.7848C7.4465 32.2071 6.03672 29.8052 3.80432 28.5163C-1.19566 25.6296 -1.30346 18.3506 3.69652 15.4639C6.01701 14.1241 7.4465 11.6482 7.4465 8.96873V8.4311C7.4465 3.77473 11.2212 0 15.8776 0H138.447C150.044 0 159.447 9.40202 159.447 21Z"
+      fill="#414141"
+    />
+    <path
+      d="M3.69652 15.4639L3.19652 14.5978L3.69652 15.4639ZM3.80432 28.5163L3.30433 29.3824L3.80432 28.5163ZM138.447 42V41H14.6617V42V43H138.447V42ZM7.4465 8.96873H8.4465V8.4311H7.4465H6.4465V8.96873H7.4465ZM15.8776 0V1H138.447V0V-1H15.8776V0ZM138.447 0V1C149.492 1 158.447 9.95431 158.447 21H159.447H160.447C160.447 8.84974 150.597 -1 138.447 -1V0ZM7.4465 8.4311H8.4465C8.4465 4.32702 11.7735 1 15.8776 1V0V-1C10.669 -1 6.4465 3.22245 6.4465 8.4311H7.4465ZM3.69652 15.4639L4.19651 16.3299C6.82641 14.8115 8.4465 12.0055 8.4465 8.96873H7.4465H6.4465C6.4465 11.2909 5.20762 13.4367 3.19652 14.5978L3.69652 15.4639ZM3.80432 28.5163L4.30432 27.6503C-0.0535533 25.1343 -0.112379 18.8176 4.19651 16.3299L3.69652 15.4639L3.19652 14.5978C-2.49454 17.8835 -2.33776 26.125 3.30433 29.3824L3.80432 28.5163ZM7.4465 34.7848H8.4465C8.4465 31.8437 6.84079 29.1147 4.30432 27.6503L3.80432 28.5163L3.30433 29.3824C5.23264 30.4957 6.4465 32.5705 6.4465 34.7848H7.4465ZM14.6617 42V41C11.2291 41 8.4465 38.2174 8.4465 34.7848H7.4465H6.4465C6.4465 39.3219 10.1246 43 14.6617 43V42ZM138.447 42V43C150.597 43 160.447 33.1503 160.447 21H159.447H158.447C158.447 32.0457 149.492 41 138.447 41V42Z"
+      fill="url(#paint0_linear_2722_187)"
+      mask="url(#path-1-inside-1_2722_187)"
+    />
+    <defs>
+      <linearGradient
+        id="paint0_linear_2722_187"
+        x1="0"
+        y1="21"
+        x2="189.446"
+        y2="21"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#333333" />
+        <stop offset="0.598884" stop-color="#C40504" />
+        <stop offset="1" stop-color="#BF0405" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+export const MenuIcon = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="100%"
+    viewBox="0 0 24 24"
+    className={`${className}`}
+  >
+    <path d="M0 0h24v24H0z" fill="none" />
+    <path
+      fill="currentColor"
+      d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1m0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1M3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1"
     />
   </svg>
 );

@@ -31,7 +31,7 @@ export default function Timeline() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="relative max-w-246.75 w-full mx-auto  h-full timeline-layers isolate">
+      <div className="relative max-w-246.75 grow mx-auto  h-full timeline-layers isolate">
         <AnimatePresence>
           {(phase === "hero" || phase === "warp") && (
             <TimelineHero key="hero" phase={phase} />

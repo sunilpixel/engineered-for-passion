@@ -41,6 +41,7 @@
   --color-eerieBlack: #2b2b2b;
   --color-subtleWhite: #eeeeee;
   --color-darkOverlay: #21212103;
+  --color-lightOverlay: #ffffff08;
   --color-darkCharcoal: #2321248f;
 
   --breakpoint-xs: 375px;
@@ -50,6 +51,8 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1440px;
   --breakpoint-3xl: 1894px;
+
+  --text-shadow-luxury: 0 0 2px #f2f2f0, 0 0 6px #f2f2f0;
 
   --shadow-innerHighlight:
     inset 0px 4px 16px rgba(246, 247, 255, 0.62),
@@ -62,7 +65,12 @@
     0px 11px 24px rgba(230, 230, 230, 0.2);
 
   --shadow-lightSoft:
-    0px 6px 0px var(--tw-shadow-color, #e6e6e608), 0px 98px 59px var(--tw-shadow-color, #e6e6e61a), 0px 0px 47px var(--tw-shadow-color, #e6e6e62b), 0px 11px 24px var(--tw-shadow-color, #e6e6e633);
+    0px 6px 0px rgba(43, 43, 43, 0.03), 0px 98px 59px rgba(43, 43, 43, 0.08),
+    0px 0px 47px rgba(43, 43, 43, 0.11), 0px 11px 24px rgba(43, 43, 43, 0.14);
+
+  --shadow-darkSoft:
+    0px 6px 0px rgba(0, 0, 0, 0.12), 0px 98px 59px rgba(0, 0, 0, 0.18),
+    0px 0px 47px rgba(0, 0, 0, 0.12), 0px 11px 24px rgba(0, 0, 0, 0.22);
 
   --shadow-innershine:
     inset 0px 4px 8px rgba(246, 247, 255, 0.22),
@@ -129,7 +137,7 @@ button {
 }
 
 .document-layers::before {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[130%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[130%] dark:bg-darkOverlay bg-black/5 rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   content: "";
   z-index: -3;
   pointer-events: none;
@@ -142,14 +150,14 @@ button {
 ========================= */
 
 .document-layers::after {
-  @apply absolute left-1/2 top-1/2 aspect-square w-full  bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-full  dark:bg-darkOverlay bg-black/5 rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   content: "";
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 80ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
 }
 .document-inside-layers {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[65%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[65%] dark:bg-darkOverlay bg-black/5 rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 240ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
@@ -160,6 +168,7 @@ button {
 ========================= */
 
 .timeline-layers::before {
+  @apply dark:bg-darkOverlay bg-black/5;
   content: "";
   position: absolute;
   left: 50%;
@@ -167,7 +176,6 @@ button {
   width: 180%;
   aspect-ratio: 3/3;
   transform: translate(-50%, -50%) scale(0.65);
-  background: #21212103;
   border-radius: 50%;
   opacity: 0;
   box-shadow: inset 0px 48px 47.6344px rgba(255, 255, 255, 0.12);
@@ -183,7 +191,7 @@ button {
 ========================= */
 
 .timeline-layers::after {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[135%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[135%] dark:bg-darkOverlay bg-black/5 rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   content: "";
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 80ms cubic-bezier(0.34, 1.56, 0.64, 1)
@@ -194,13 +202,13 @@ button {
 ========================= */
 
 .timeline-inside-layers {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[90%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[90%] dark:bg-darkOverlay bg-black/5 rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 160ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
 }
 .timeline-inside-layers-2 {
-  @apply absolute left-1/2 top-1/2 aspect-square w-[45%] bg-darkOverlay rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
+  @apply absolute left-1/2 top-1/2 aspect-square w-[45%] dark:bg-darkOverlay bg-black/5 rounded-full opacity-0 shadow-layers z-0 pointer-events-none will-change-[transform_opacity];
   transform: translate(-50%, -50%) scale(0.65);
   animation: document-bg-reveal 0.32s 240ms cubic-bezier(0.34, 1.56, 0.64, 1)
     forwards;
@@ -246,8 +254,4 @@ button {
 .moving-car-border {
   @apply relative z-0;
   background: linear-gradient(180deg, #d7d7d7 -80%, #222222 100%) border-box;
-}
-.cc{
-  
-    box-shadow: inset 0px 26.4635px 47.6344px rgba(255, 255, 255, 0.06);
 }

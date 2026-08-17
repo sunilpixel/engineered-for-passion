@@ -6,7 +6,7 @@ const CenterContent = ({ activeId }: CenterContentProps) => {
   switch (activeId) {
     case 1:
       return (
-        <div className="flex items-center justify-center text-white">
+        <div className="flex items-center justify-center dark:text-white text-eerieBlack font-bold text-center md:text-base text-sm">
           Pricing
         </div>
       );
@@ -16,14 +16,14 @@ const CenterContent = ({ activeId }: CenterContentProps) => {
 
     case 3:
       return (
-        <div className="flex items-center justify-center text-white">
+        <div className="flex items-center justify-center dark:text-white text-eerieBlack font-bold text-center md:text-base text-sm">
           Performance
         </div>
       );
 
     case 4:
       return (
-        <div className="flex items-center justify-center text-white">Chat</div>
+        <div className="flex items-center justify-center dark:text-white text-eerieBlack font-bold text-center md:text-base text-sm">Chat</div>
       );
 
     case 5:
@@ -31,7 +31,7 @@ const CenterContent = ({ activeId }: CenterContentProps) => {
 
     case 6:
       return (
-        <div className="flex items-center justify-center text-white">File</div>
+        <div className="flex items-center justify-center dark:text-white text-eerieBlack font-bold text-center md:text-base text-sm">File</div>
       );
 
     default:

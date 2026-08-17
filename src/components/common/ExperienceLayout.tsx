@@ -1,15 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CenterContent from "../CenterContent";
 import Header from "./Header";
 import HeroContent from "./HeroContent";
 import LeftActions from "./LeftActions";
 import RightActions from "./RightActions";
 import Drawer from "./Drawer";
+import { MenuIcon } from "./Icons";
 
 const ExperienceLayout = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  useEffect(() => {
+    document.body.style.overflow = isDrawerOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isDrawerOpen]);
   return (
     <div className=" flex flex-col overflow-hidden">
       <Header />
@@ -25,9 +33,9 @@ const ExperienceLayout = () => {
       <button
         type="button"
         onClick={() => setIsDrawerOpen(true)}
-        className="text-white md:hidden block"
+        className="text-white md:hidden  fixed bottom-5 right-5 z-[99] w-10 h-10 bg-eerieBlack flex items-center justify-center rounded-xl"
       >
-        menu
+        <MenuIcon className="w-6 h-6 fill-eerieBlack" />
       </button>
       <Drawer
         isOpen={isDrawerOpen}

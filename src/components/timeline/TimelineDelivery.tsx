@@ -21,10 +21,9 @@ export default function TimelineDelivery() {
         ease: EASE,
       }}
     >
-      {" "}
       {/* Car */}
       <motion.div
-        className="relative aspect-square moving-car-border shadow-innerHighlightLight shrink-0 overflow-hidden rounded-full gap-4 sm:block hidden"
+        className="relative aspect-square moving-car-border shadow-innerHighlightLight overflow-hidden rounded-full gap-4 sm:block hidden grow"
         initial={{ scale: 0.26, x: 0 }}
         animate={{ scale: 1, x: 350, opacity: 0 }}
         transition={{

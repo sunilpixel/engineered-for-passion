@@ -7,8 +7,7 @@ const Document = () => {
 
   return (
     <>
-
-      <div className="document-layers relative isolate w-full">
+      <div className="document-layers relative isolate grow">
         <span className="document-inside-layers" />
         <div className="relative z-10 flex sm:flex-row flex-col mx-auto w-fit gap-6 sm:gap-0">
           {/* LEFT STATS */}
@@ -26,17 +25,25 @@ const Document = () => {
           {/* CAR */}
           <div className="relative ">
             <Image
-              className="relative z-10 aspect-square w-full xl:max-w-72 max-w-52 rounded-full object-cover shadow-lightSoft 3xl:max-w-85.5"
+              className="relative z-10 aspect-square w-full 3xl:max-w-85.5 max-w-72 rounded-full object-cover dark:shadow-lightSoft shadow-darkSoft"
               src="/images/png/black-car.png"
               alt="black car"
               width={342}
               height={342}
               priority
             />
-               <Image
-              className="absolute bottom-[5%] left-1/2 z-0 h-[312%] w-[130%] -translate-x-1/2 object-fill"
+            <Image
+              className="absolute bottom-[5%] left-1/2 z-0 h-[312%] w-[130%] -translate-x-1/2 object-fill opacity-0 dark:opacity-100"
               src="/images/png/light-up.png"
               alt="black car"
+              width={189}
+              height={342}
+              priority
+            />{" "}
+            <Image
+              className="absolute bottom-[5%] left-1/2 z-0 h-[312%] w-[130%] -translate-x-1/2 object-fill dark:opacity-0 opacity-100"
+              src="/images/png/dark-light-up.png"
+              alt="light-up"
               width={189}
               height={342}
               priority
