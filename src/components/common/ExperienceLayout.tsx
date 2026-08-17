@@ -22,7 +22,7 @@ const ExperienceLayout = () => {
     <div className=" flex flex-col overflow-hidden">
       <Header />
       <HeroContent />
-      <div className="flex justify-between items-center gap-4 3xl:max-w-[1752px] max-w-[1440px] px-3 w-full mx-auto grow lg:mt-20 mt-10">
+      <div className="flex justify-between items-center gap-4 3xl:max-w-[1752px] max-w-360 px-3 w-full mx-auto grow lg:mt-20 mt-10">
         <LeftActions activeId={activeId} onSelect={setActiveId} />
         <CenterContent activeId={activeId} />
         <RightActions activeId={activeId} onSelect={setActiveId} />
@@ -33,9 +33,9 @@ const ExperienceLayout = () => {
       <button
         type="button"
         onClick={() => setIsDrawerOpen(true)}
-        className="text-white md:hidden  fixed bottom-5 right-5 z-[99] w-10 h-10 bg-eerieBlack flex items-center justify-center rounded-xl"
+        className=" md:hidden fixed! bottom-4 right-4 z-99 w-10 h-10 dark:shadow-innershine rounded-full 3xl:size-16 size-12 p-1 flex items-center justify-center overflow-hidden gradient-border dark:bg-darkCharcoal bg-eerieBlack shadow-innerHighlight  "
       >
-        <MenuIcon className="w-6 h-6 fill-eerieBlack" />
+        <MenuIcon className="w-6 h-6 fill-white text-white" />
       </button>
       <Drawer
         isOpen={isDrawerOpen}

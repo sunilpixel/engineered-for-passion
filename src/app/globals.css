@@ -99,7 +99,7 @@ button {
 }
 
 .menu-buttons {
-  @apply rounded-full 3xl:size-16 size-12 3xl:p-4 p-3.5 flex items-center justify-center  overflow-hidden;
+  @apply rounded-full 3xl:size-16 size-12 3xl:p-4 p-3.5 flex items-center justify-center overflow-hidden;
 }
 
 .gradient-border {

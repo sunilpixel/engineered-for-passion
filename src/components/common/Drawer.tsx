@@ -10,14 +10,12 @@ const Drawer = ({ isOpen, onClose, activeId, onSelect }: DrawerProps) => {
   return (
     <>
       {/* Overlay */}
-      <div
-        onClick={onClose}
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
-          isOpen
-            ? "pointer-events-auto opacity-100"
-            : "pointer-events-none opacity-0"
-        }`}
-      />
+      {isOpen && (
+        <div
+          onClick={onClose}
+          className="fixed inset-0 z-40 bg-black/50 md:hidden"
+        />
+      )}
 
       {/* Drawer */}
       <aside
