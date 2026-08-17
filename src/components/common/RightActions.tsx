@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { RightMenuItems } from "./Helper";
 import { CurveBorderIcon, TipbgIcon } from "./Icons";
 
@@ -30,7 +29,7 @@ const RightActions = ({ activeId, onSelect }: RightActionsProps) => {
                   : "right-[calc(100%-16px)]"
               }`}
             >
-   <TipbgIcon className="absolute inset-0 h-full w-full rotate-180" />
+              <TipbgIcon className="absolute inset-0 h-full w-full rotate-180" />
               <p className="relative z-10 w-full">{item.tip}</p>
             </div>
           </div>

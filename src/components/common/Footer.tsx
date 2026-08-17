@@ -1,19 +1,84 @@
-import Image from "next/image";
-import { FooterBgIcon } from "./Icons";
+"use client";
 
-const Footer = () => {
+import { LAPS, LINE } from "./Helper";
+
+export default function Footer({ step = 3 }: { step?: number }) {
   return (
-    <footer className="max-w-[1892px] w-full mx-auto relative ">
-      <div className="flex justify-between max-w-[1580px] w-full mx-auto">
-        <div className="p-2.75 rounded-full bg-white/10  z-10 size-11 absolute bottom-[60px]">
-          <div className="bg-babyGrey rounded-full w-full h-full"></div>
-        </div>
-      </div>{" "}
-      <div className="footer-bg h-full w-full ">
-        <FooterBgIcon className=" relative z-10 fill-black" />
-      </div>
-    </footer>
-  );
-};
+    <div className="relative h-52 w-full overflow-hidden md:h-64 xl:h-[347px]">
+      <svg
+        viewBox="0 0 1894 347"
+        preserveAspectRatio="none"
+        className="absolute inset-0 h-full w-full"
+      >
+        <defs>
+          <linearGradient id="trackFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#C40504" stopOpacity="0.18" />
+            <stop offset="100%" stopColor="#C40504" stopOpacity="0" />
+          </linearGradient>
+        </defs>
 
-export default Footer;
+        <path d={`${LINE} L1894 347 L0 347 Z`} fill="url(#trackFill)" />
+
+        <path
+          d={LINE}
+          fill="none"
+          stroke="#C40504"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeDasharray="11 11"
+          vectorEffect="non-scaling-stroke"
+        />
+      </svg>
+
+      {LAPS.map((lap, i) => {
+        const active = step === i + 1;
+
+        return (
+          <div
+            key={lap.title}
+            className="absolute bottom-6 flex -translate-x-1/2 flex-col items-center"
+            style={{
+              left: `${(lap.x / 1894) * 100}%`,
+              top: `${(lap.y / 347) * 100}%`,
+            }}
+          >
+            {/* dot */}
+            <span className="relative -mt-2 flex size-4 lg:-mt-3 lg:size-6">
+              {active && (
+                <span className="absolute size-full animate-ping rounded-full bg-deepRed opacity-60" />
+              )}
+              <span
+                className={`size-full rounded-full transition-colors ${
+                  active ? "bg-deepRed" : "bg-babyGrey"
+                }`}
+              />
+            </span>
+
+            {/* dashed connector */}
+            <span className="w-px flex-1 border-white/50 border  border-dashed" />
+
+            <p
+              className={`mt-1.25 whitespace-nowrap sm:text-sm text-xs leading-none transition-colors lg:text-base ${
+                active
+                  ? "font-black text-eerieBlack dark:text-white"
+                  : "font-semibold text-eerieBlack/68 dark:text-white/68"
+              }`}
+            >
+              {lap.title}
+            </p>
+
+            <p
+              className={`mt-3 hidden whitespace-nowrap sm:text-sm text-xs font-medium leading-none transition-colors sm:block lg:text-[17px] ${
+                active
+                  ? "dark:text-vibrant text-eerieBlack"
+                  : "dark:text-vibrant/40 text-eerieBlack/40"
+              }`}
+            >
+              {lap.subtitle}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

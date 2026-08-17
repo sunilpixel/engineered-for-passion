@@ -104,3 +104,12 @@ export const carStats = [
     side: "right",
   },
 ];
+export const LAPS = [
+  { title: "LAP 01", subtitle: "Speed Zone", x: 188, y: 230 },
+  { title: "LAP 02", subtitle: "Acceleration Zone", x: 551, y: 211 },
+  { title: "LAP 03", subtitle: "Technical Section", x: 923, y: 190 },
+  { title: "LAP 04", subtitle: "High Speed Zone", x: 1310, y: 172 },
+  { title: "LAP 05", subtitle: "Final Corner", x: 1665, y: 115 },
+];
+export const LINE =
+  "M0 234 C90 227 160 230 267 232 C350 232 390 225 455 214 C550 210 650 211 707 210 C800 206 860 202 905 195 C980 181 1050 177 1127 175 C1220 174 1300 173 1372 170 C1430 160 1460 145 1515 130 C1580 118 1650 116 1714 114 C1780 110 1840 103 1894 98";

@@ -7,6 +7,7 @@ import LeftActions from "./LeftActions";
 import RightActions from "./RightActions";
 import Drawer from "./Drawer";
 import { MenuIcon } from "./Icons";
+import Footer from "./Footer";
 
 const ExperienceLayout = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
@@ -27,8 +28,7 @@ const ExperienceLayout = () => {
         <CenterContent activeId={activeId} />
         <RightActions activeId={activeId} onSelect={setActiveId} />
       </div>
-      <div className="h-[252px] text-white">ewds</div>
-      {/* <Footer /> */}
+      <Footer step={activeId ?? 3} />
 
       <button
         type="button"
