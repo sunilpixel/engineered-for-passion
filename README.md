@@ -1,3 +1,5 @@
+The latest updated code has been pushed to the main branch.
+
 <!-- Tech Stack Used -->
 
 Next.js – React framework for building a fast, scalable, and SEO-friendly application.
